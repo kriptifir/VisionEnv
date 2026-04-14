@@ -38,14 +38,13 @@ struct PanoramaView: View {
         let texture = try await TextureResource(contentsOf: fileURL)
         var material = UnlitMaterial()
         material.color = .init(texture: .init(texture))
-        material.cullMode = .front
-
         let sphere = ModelEntity(
             mesh: .generateSphere(radius: 12),
             materials: [material]
         )
         sphere.scale = SIMD3<Float>(repeating: 1)
         entity.addChild(sphere)
+        sphere.scale.x *= -1
         return entity
     }
 }
