@@ -1,0 +1,40 @@
+name: VisionEnv
+options:
+  bundleIdPrefix: com.kk
+  deploymentTarget:
+    visionOS: "2.1"
+    iOS: "17.0"
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.kk.visionenv
+    MARKETING_VERSION: 1.0
+    CURRENT_PROJECT_VERSION: 1
+    SWIFT_VERSION: 5.10
+    GENERATE_INFOPLIST_FILE: NO
+    INFOPLIST_FILE: Resources/Info.plist
+    ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    DEVELOPMENT_TEAM: ""
+targets:
+  VisionEnv:
+    type: application
+    platform: visionOS
+    sources:
+      - Sources/VisionEnv
+    resources:
+      - Resources
+    settings:
+      base:
+        PRODUCT_NAME: VisionEnv
+        PRODUCT_BUNDLE_IDENTIFIER: com.kk.visionenv
+        SUPPORTS_MACCATALYST: NO
+        XROS_DEPLOYMENT_TARGET: "2.1"
+        IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    info:
+      path: Resources/Info.plist
+schemes:
+  VisionEnv:
+    build:
+      targets:
+        VisionEnv: all
+    run:
+      config: Debug
